@@ -1,0 +1,33 @@
+@baseURL=http://localhost
+@port=3030
+
+# @name SendMessage
+POST {{baseURL}}:{{port}}/send-sms HTTP/1.1
+content-type: application/json
+
+{
+    "PhoneNumber": "+5511974598612",
+    "Message": "Mensagem enviada pelo SNS com NodeJS"
+}
+
+###
+
+# @name MissingPhoneNumber
+POST {{baseURL}}:{{port}}/send-sms HTTP/1.1
+content-type: application/json
+
+{
+    "Message": "Teste com nodejs"
+}
+
+###
+
+# @name MissingMessage
+POST {{baseURL}}:{{port}}/send-sms HTTP/1.1
+content-type: application/json
+
+{
+    "PhoneNumber": "+5511974598612"
+}
+
+###
